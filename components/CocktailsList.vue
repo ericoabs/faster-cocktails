@@ -1,5 +1,14 @@
 <script setup>
 import { ChevronRightIcon } from '@heroicons/vue/20/solid'
+import { ref } from 'vue';
+
+const showModal = ref(false);
+
+const selectedCocktail = ref({
+  idDrink: "11007",
+  strDrink: "Margarita",
+  // Restante dos dados do coquetel aqui
+});
 
 const cocktails = [
   {
@@ -108,42 +117,56 @@ const cocktails = [
   }]
 </script>
 <template>
-  <ul
-    role="list"
-    class="divide-y divide-gray-100"
-  >
-    <li
-      v-for="cocktail in cocktails"
-      :key="cocktail.strDrink"
-      class="relative flex justify-between gap-x-6 py-5"
+  <div>
+    <ul
+      role="list"
+      class="divide-y divide-gray-100"
     >
-      <div class="flex gap-x-4">
-        <img
-          class="h-12 w-12 flex-none rounded-full bg-gray-50"
-          :src="cocktail.strDrinkThumb"
-          alt=""
-        >
-        <div class="flex items-center">
-          <p class="text-sm font-semibold text-gray-900">
-            <a :href="cocktail.href">
-              {{ cocktail.strDrink }}
-            </a>
-          </p>
+      <li
+        v-for="cocktail in cocktails"
+        :key="cocktail.strDrink"
+        class="relative flex justify-between gap-x-6 py-5"
+        @click="showModal = true"
+      >
+        <div class="flex gap-x-4">
+          <img
+            class="h-12 w-12 flex-none rounded-full bg-gray-50"
+            :src="cocktail.strDrinkThumb"
+            alt=""
+          >
+          <div class="flex items-center">
+            <p class="text-sm font-semibold text-gray-900">
+              <a :href="cocktail.href">
+                {{ cocktail.strDrink }}
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="flex items-center gap-x-4">
-        <div class="hidden sm:flex sm:flex-col sm:items-end">
-          <p class="text-sm leading-6 text-gray-900">
-            {{ cocktail.strCategory }}
-          </p>
+        <div class="flex items-center gap-x-4">
+          <div class="hidden sm:flex sm:flex-col sm:items-end">
+            <p class="text-sm leading-6 text-gray-900">
+              {{ cocktail.strCategory }}
+            </p>
+          </div>
+          <ChevronRightIcon
+            class="h-5 w-5 flex-none text-gray-400"
+            aria-hidden="true"
+          />
+          <button
+            class="px-4 py-2 bg-blue-500 text-white rounded-md"
+            @click="showModal = true"
+          >
+            Show Cocktail
+          </button>
         </div>
-        <ChevronRightIcon
-          class="h-5 w-5 flex-none text-gray-400"
-          aria-hidden="true"
-        />
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+    <CocktailModal
+      v-if="showModal"
+      :cocktail="selectedCocktail"
+      @update:show-modal="showModal = $event"
+    />
+  </div>
 </template>
 
 
