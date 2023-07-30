@@ -30,15 +30,18 @@ const { data } = await useFetch<CocktailList>(`https://www.thecocktaildb.com/api
 </script>
 
 <template>
-  <div class="container mx-auto px-4 py-8">
-    <header class="mb-8 text-center">
-      <h1 class="text-3xl font-semibold text-gray-800">
-        {{ queryParam }}
-      </h1>
-    </header>
-    <CocktailsList
-      v-if="data"
-      :cocktail-list="data.drinks"
-    />
+  <div>
+    <NavBar />
+    <div class="container mx-auto px-4 py-8">
+      <header class="mb-8 text-center">
+        <h1 class="text-3xl font-semibold text-gray-800">
+          {{ queryParam }}
+        </h1>
+      </header>
+      <CocktailsList
+        v-if="data"
+        :cocktail-list="data.drinks"
+      />
+    </div>
   </div>
 </template>
