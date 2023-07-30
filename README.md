@@ -63,7 +63,7 @@ The project uses the following development dependencies:
 - [nuxt](https://nuxtjs.org) - Vue.js framework for building server-side rendered (SSR) applications.
 - [vitest](https://github.com/cheap-glitch/vitest) - Vue.js integration testing utility.
 
-##Contact
+## Contact
 If you have any questions or suggestions regarding the project, please feel free to reach out to me:
 
 Email: ericoabs25@gmail.com
