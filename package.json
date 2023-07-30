@@ -18,6 +18,7 @@
     "nuxt": "^3.6.5"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.18"
+    "@heroicons/vue": "^2.0.18",
+    "vue-toast-notification": "^3"
   }
 }
