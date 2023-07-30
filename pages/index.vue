@@ -9,7 +9,7 @@
       </h1>
     </header>
 
-    <CockTailsList />
+    <CocktailsCategoryList />
 
     <footer class="mt-8 text-center">
       <p class="text-gray-500">
