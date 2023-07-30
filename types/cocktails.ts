@@ -3,3 +3,15 @@ export interface CocktailListItem {
   strDrinkThumb: string
   idDrink: string
 }
+
+export interface CocktailList {
+  drinks: CocktailListItem[]
+}
+
+export interface CocktailCategoryItem {
+  strCategory: string
+}
+
+export interface CocktailCategoryList {
+  drinks: CocktailCategoryItem[]
+}
