@@ -1,65 +1,70 @@
-# Nuxt 3 Minimal Starter
+# Faster Cocktails
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A web application where users can explore different categories of cocktails, select a cocktail from the chosen category, and view its ingredients and instructions on how to make it.
 
-## Setup
+## Table of Contents
 
-Make sure to install the dependencies:
+- [Faster Cocktails](#faster-cocktails)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Features](#features)
+  - [Dependencies](#dependencies)
+  - [Dev Dependencies](#dev-dependencies)
+  - [Contact](#contact)
+
+## Description
+
+The Faster Cocktails is built with Nuxt.js, allowing users to browse through various categories of cocktails, select a specific cocktail, and access detailed information about its ingredients and instructions.
+
+## Installation
+
+Follow these steps to run the application locally:
+
+1. Clone the repository:
 
 ```bash
-# npm
-npm install
+# Clone the repository
+git clone https://github.com/your-username/cocktail-selection-app.git
+cd cocktail-selection-app
 
-# pnpm
-pnpm install
-
-# yarn
+# Install the dependencies
 yarn install
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+## Usage
+Run the development server:
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
 yarn dev
 ```
 
-## Production
+The application should now be running at http://localhost:3000.
 
-Build the application for production:
+## Features
+Browse and explore various categories of cocktails.
+View details of each cocktail, including ingredients and instructions.
 
-```bash
-# npm
-npm run build
 
-# pnpm
-pnpm run build
+## Dependencies
+The project uses the following dependencies:
+- [@heroicons/vue](https://github.com/tailwindlabs/heroicons) - Icon library for Vue.js applications.
+- [vue-toast-notification](https://github.com/ankurk91/vue-toast-notification) - Toast notification for Vue.js.
 
-# yarn
-yarn build
-```
 
-Locally preview production build:
+## Dev Dependencies
+The project uses the following development dependencies:
+- [@nuxt/devtools](https://nuxtjs.org/docs/2.x/concepts/devtools) - Nuxt.js Devtools for debugging and inspecting.
+- [@nuxt/eslint-config](https://nuxtjs.org/docs/2.x/features/linting) - ESLint configuration for Nuxt.js projects.
+- [@nuxt/test-utils](https://nuxtjs.org/docs/2.x/testing) - Test utilities for Nuxt.js.
+- [@nuxtjs/eslint-module](https://github.com/nuxt-community/eslint-module) - ESLint module for Nuxt.js projects.
+- [@nuxtjs/tailwindcss](https://tailwindcss.nuxtjs.org) - Tailwind CSS module for Nuxt.js projects.
+- [@types/node](https://www.npmjs.com/package/@types/node) - TypeScript types for Node.js.
+- [eslint](https://eslint.org) - JavaScript linter.
+- [nuxt](https://nuxtjs.org) - Vue.js framework for building server-side rendered (SSR) applications.
+- [vitest](https://github.com/cheap-glitch/vitest) - Vue.js integration testing utility.
 
-```bash
-# npm
-npm run preview
+##Contact
+If you have any questions or suggestions regarding the project, please feel free to reach out to me:
 
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# faster-cocktails
-# faster-cocktails
+Email: ericoabs25@gmail.com
+Linkedin: https://www.linkedin.com/in/ericoabs/
