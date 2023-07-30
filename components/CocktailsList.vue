@@ -5,12 +5,7 @@ import { CocktailListItem } from '@/types/cocktails'
 const props = defineProps<{ cocktailList: CocktailListItem[] }>()
 
 const showModal = ref(false);
-
-const selectedCocktail = ref({
-  idDrink: "11007",
-  strDrink: "Margarita",
-  // Restante dos dados do coquetel aqui
-});
+const selectedCocktailId = ref('');
 
 const cocktails = computed(() => {
   if (!props.cocktailList) {
@@ -24,6 +19,11 @@ const cocktails = computed(() => {
       idDrink: item.idDrink,
     }));
 });
+
+const handleOpenModal = (id: string) => {
+  selectedCocktailId.value = id
+  showModal.value = true
+}
 </script>
 <template>
   <div>
@@ -50,9 +50,9 @@ const cocktails = computed(() => {
           <div class="flex w-0 flex-1 justify-center items-center pb-8">
             <button
               class="px-4 py-2 bg-blue-500 text-white rounded-md"
-              @click="showModal = true"
+              @click="handleOpenModal(cocktail.idDrink)"
             >
-              Show Cocktail
+              Show Details
             </button>
           </div>
         </div>
@@ -60,8 +60,9 @@ const cocktails = computed(() => {
     </ul>
     <CocktailModal
       v-if="showModal"
-      :cocktail="selectedCocktail"
-      @update:show-modal="showModal = $event"
+      :cocktail-id="selectedCocktailId"
+      :show-modal="showModal"
+      @update:showModal="showModal = $event"
     />
   </div>
 </template>
