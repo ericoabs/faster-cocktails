@@ -63,7 +63,7 @@ const cocktail = computed(() => {
     @click="closeModalOnOverlayClick"
   >
     <div
-      class="bg-white rounded-lg p-4 max-w-xl w-full text-center"
+      class="bg-white rounded-lg p-4 max-w-xl w-full text-center overflow-y-auto"
       @click.stop
     >
       <img
