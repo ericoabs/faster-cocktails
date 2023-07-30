@@ -1,39 +1,36 @@
 <script setup lang="ts">
-const cocktails = [
-  {
-    strCategory: "Ordinary Drink"
-  },
-  {
-    strCategory: "Cocktail"
-  },
-  {
-    strCategory: "Shake"
-  },
-  {
-    strCategory: "Other / Unknown"
-  },
-  {
-    strCategory: "Cocoa"
-  },
-  {
-    strCategory: "Shot"
-  },
-  {
-    strCategory: "Coffee / Tea"
-  },
-  {
-    strCategory: "Homemade Liqueur"
-  },
-  {
-    strCategory: "Punch / Party Drink"
-  },
-  {
-    strCategory: "Beer"
-  },
-  {
-    strCategory: "Soft Drink"
+import { CocktailCategoryList, CocktailCategoryItem } from '@/types/cocktails'
+const { $toast } = useNuxtApp();
+
+const { data } = await useFetch<CocktailCategoryList>('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list', {
+  onResponseError({ request, response, options }) {
+    if (response.status === 500) {
+      $toast.error('Ops! Tivemos um interno, tente novamente mais tarde.', {
+        position: 'top-right'
+      });
+      return
+    } else if (response.status === 400) {
+      $toast.error('Ops! Requisição inválida.', {
+        position: 'top-right'
+      });
+      return
+    }
+    $toast.error('Ops! Não conseguimos processar sua requisição, tente novamente mais tarde', {
+      position: 'top-right'
+    });
   }
-]
+})
+
+const cocktails = computed(() => {
+  if (!data) {
+    return
+  }
+
+  return data.value?.drinks.map((item: CocktailCategoryItem) => (
+    {
+      strCategory: item.strCategory,
+    }));
+});
 </script>
 
 <template>
@@ -45,10 +42,12 @@ const cocktails = [
     >
       <div class="min-w-0 flex-1">
         <a
-          href="#"
           class="focus:outline-none text-center"
+          @click="navigateTo(`/category/${encodeURIComponent(cocktail.strCategory)}`)"
         >
-          <p class="text-sm font-medium text-gray-900">{{ cocktail.strCategory }}</p>
+          <p class="text-sm font-medium text-gray-900">
+            {{ cocktail.strCategory }}
+          </p>
         </a>
       </div>
     </div>
