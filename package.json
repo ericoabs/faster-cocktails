@@ -11,11 +11,13 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/test-utils": "^3.6.5",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.17.1",
     "eslint": "^8.46.0",
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.6.5",
+    "vitest": "^0.33.0"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
