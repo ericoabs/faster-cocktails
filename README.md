@@ -26,8 +26,8 @@ Follow these steps to run the application locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/cocktail-selection-app.git
-cd cocktail-selection-app
+git clone https://github.com/your-username/faster-cocktails.git
+cd faster-cocktails
 
 # Install the dependencies
 yarn install
